@@ -1,5 +1,3 @@
-import React, { useState, useEffect } from 'react';
-
 import Navbar from './Navbar';
 import { Route, Routes } from 'react-router-dom';
 import Product from './Product';
@@ -13,6 +11,7 @@ const App = () => {
     <>
       < Navbar />
       <Routes>
+        {/* Routes of Application */}
         <Route path="/" element={<Product />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/checkout" element={<CheckoutForm />} />

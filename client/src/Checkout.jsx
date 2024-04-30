@@ -7,7 +7,7 @@ import Loader from './Loader';
 import { CartContext } from './cartContext';
 import showToast from './toast';
 
-const stripePromise = loadStripe('pk_test_51MTN9nSG7PPFG3JNX00oeUSXGMHTASyFXzd92aWSrq2tBL1FchSHaUbH76qOUzuIwViKBDKY6dOsc4gUNnwxKrUw00h4PLsrsm');
+const stripePromise = loadStripe(import.meta.env.VITE_APP_PUBLISHABLE_KEY);
 
 
 
@@ -95,7 +95,9 @@ const Form = ({
          fetch('http://localhost:3000/payment/save-payment', {
             method: 'POST',
             headers: {
-               'Content-Type': 'application/json'
+               Accept: 'application/json',
+               'Content-Type': 'application/json',
+               'Access-Control-Allow-Credentials': true
             },
             body: JSON.stringify({ name: order.name, email: order.email, item: [...item], paymentStatus: 'completed', transactionId: paymentIntent.id })
          });

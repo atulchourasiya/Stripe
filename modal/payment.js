@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+// Payment Schema
 const paymentSchema = mongoose.Schema({
    name: {
       type: String,
